@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def index():
     body = request.get_json()
     temp = body.get("temp")
