@@ -1,16 +1,18 @@
 from flask import Flask, request, jsonify, make_response
+import time
 
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    temp = request.args.get("temp")
-    light = request.args.get("light")
-    trans_id = request.args.get("id")
+    body = request.get_json()
+    temp = body.get("temp")
+    light = body.get("light")
+    trans_id = body.get("count")
 
     log_file = open("logfile.csv", "a")
-    file_output = temp + "," + light + "," + trans_id + "\n"
+    file_output = temp + "," + light + "," + trans_id + "," + str(time.time()) + "\n"
     log_file.write(file_output)
     log_file.close()
     web_output = "Temp: " + temp + "\n" + "Light: " + light + "\n" + "Transmission ID: " + trans_id
