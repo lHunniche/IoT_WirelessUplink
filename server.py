@@ -12,11 +12,12 @@ def index():
     trans_id = body.get("count")
 
     log_file = open("logfile.csv", "a")
-    file_output = temp + "," + light + "," + trans_id + "," + str(time.time()) + "\n"
+    file_output = str(temp) + "," + str(light) + "," + str(trans_id) + "," + str(time.time()) + "\n"
     log_file.write(file_output)
     log_file.close()
-    web_output = "Temp: " + temp + "\n" + "Light: " + light + "\n" + "Transmission ID: " + trans_id
-    return web_output
+    #web_output = "Temp: " + temp + "\n" + "Light: " + light + "\n" + "Transmission ID: " + trans_id
+
+    return "hej"
 
 
 
