@@ -26,4 +26,4 @@ if __name__ == "__main__":
     log_file = open("logfile.csv", "w")
     log_file.write("temp_raw,temp_mv,temp_c,light,trans_id,time\n")
     log_file.close()
-    app.run(debug=True, host='0.0.0.0', port=8080, threaded=True)
+    app.run(debug=True, host='0.0.0.0', port=8080, threaded=True) #37905
